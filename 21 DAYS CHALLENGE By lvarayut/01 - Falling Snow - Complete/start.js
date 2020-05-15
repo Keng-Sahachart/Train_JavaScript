@@ -7,7 +7,7 @@
     canvas.height = window.innerHeight;
 
     /** @type {CanvasRenderingContext2D} */  
-    const canvasContext =canvas.getContext('2d');
+    const canvasContext = canvas.getContext('2d');
     return {  // obj ตั้งชื่อตัวแปร ,พร้อมกำหนดค่า ,พร้อม return
       canvas,
       canvasContext, // กำหนดว่าจะทำ 2d
@@ -15,26 +15,27 @@
     }
   }
 
-  function random(min,max){
+  function random(min,max){  // สุ่มตัวเลข
     return Math.floor(Math.random()*(max-min+1))+min;
   }
 
   function createSnowBalls(canvas,numberOfSnowBalls){
-    const x = [...Array(numberOfSnowBalls)].map(()=> {
+    const x = [...Array(numberOfSnowBalls)].map(()=> {  // คำสั่ง ec6 สร้าง array ตามจำนวน เป็น map
       return{
         x : random(0,canvas.width),
         y: random(0,canvas.height),
 
         opacity : random(0.5,1), 
-        radius : random(2,4)
+        radius : random(2,4),
+        speedX : random(-5,5),
+        speedY : random(1,2)
       }
     });
-    console.log(x);
+    console.log(x);  
     return x;
   }
 
   function drawSnowBall(canvasContext,snowBall){
-    /** @type {CanvasRenderingContext2D} */
     const canvasContext_ = canvasContext;
     canvasContext_.beginPath(); // บอก canvas ว่ากำลังจะวาด // ไม่ auto complete
     canvasContext_.arc(snowBall.x,snowBall.y,snowBall.radius,0,Math.PI*2)  // วาดรูปวงกลม
@@ -42,11 +43,23 @@
     canvasContext_.fill(); // คำสั่งวาด
   }
 
-  function moveSnowBall(snowball){
+  function moveSnowBall(canvas,snowBall){
+    snowBall.x += snowBall.speedX;
+    snowBall.y += snowBall.speedY;
 
-    snowball.x += 5;
-    snowball.y += 5;
+    if(snowBall.x > canvas.width) {
+      snowBall.x = 0;
+    }
+    else if(snowBall.x < 0){
+      snowBall.x = canvas.width;
+    }
 
+    if(snowBall.y > canvas.height) {
+      snowBall.y = 0;
+    }
+    else if(snowBall.y < 0){
+      snowBall.y = canvas.height;
+    }
   }
 
   function run(){
@@ -56,9 +69,9 @@
 
     setInterval(() => {
  
-      canvasContext.clearRect(0,0,canvas.width,canvas.height)
+      canvasContext.clearRect(0,0,canvas.width,canvas.height)  //มีภาพซ้อน ต้อง เคลียร์ รูปเก่า ออกก่อน ที่จะวาดใหม่ 
       snowBalls.forEach((snowBall) => drawSnowBall(canvasContext,snowBall));
-      snowBalls.forEach((snowBall) => moveSnowBall(snowBall));
+      snowBalls.forEach((snowBall) => moveSnowBall(canvas,snowBall));
       
     }, 50);
 
