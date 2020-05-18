@@ -11,7 +11,7 @@
     return {  // obj ตั้งชื่อตัวแปร ,พร้อมกำหนดค่า ,พร้อม return
       canvas,
       canvasContext, // กำหนดว่าจะทำ 2d
-      numberOfSnowBalls: 250 //กำหนดจำนวนหิมะ
+      numberOfSnowBalls: 500 //กำหนดจำนวนหิมะ
     }
   }
 
@@ -26,7 +26,7 @@
         y: random(0,canvas.height),
 
         opacity : random(0.5,1), 
-        radius : random(2,4),
+        radius : random(2,5),
         speedX : random(-5,5),
         speedY : random(1,2)
       }
@@ -66,7 +66,7 @@
  
     const {canvas,canvasContext,numberOfSnowBalls} = setup(); // ประกาศตัวแปรเป็น obj และ รับค่าจาก setup
     const snowBalls = createSnowBalls(canvas,numberOfSnowBalls);
-
+    // alert("snowBall Is " + snowBalls.length);
     setInterval(() => {
  
       canvasContext.clearRect(0,0,canvas.width,canvas.height)  //มีภาพซ้อน ต้อง เคลียร์ รูปเก่า ออกก่อน ที่จะวาดใหม่ 

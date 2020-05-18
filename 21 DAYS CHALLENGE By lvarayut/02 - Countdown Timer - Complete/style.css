@@ -25,6 +25,6 @@ h1 {
 }
 
 .countdown span {
-  display: block;
+  display: block;     /* ทำให้ขึ้นบรรทัดใหม่ */
   font-size: 5rem;
 }

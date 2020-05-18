@@ -2,3 +2,25 @@ body {
   background-image: url('./background.jpg');
   background-size: cover;
 }
+
+.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  /* top: 0; */
+}
+
+.child-1 {
+  left: 0;
+}
+
+.child-2 {
+  margin: 0;
+  display: block;
+  top: 100px;
+  left: 30%;
+  width: 40%;
+}
+
