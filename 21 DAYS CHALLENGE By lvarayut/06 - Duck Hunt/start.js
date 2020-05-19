@@ -50,10 +50,10 @@
     duck.x = left + duck.speedX ;   // ทำไมไม่เอา จาก duck.x += duck.speedX  เลย
     duck.y = top + duck.speedY ; 
 
-    if(duck.x > window.innerWidth || duck.x < 0) {
+    if(duck.x > (window.innerWidth-200) || duck.x < 0) {
       duck.speedX *= -1 ;
     }
-    if(duck.y > window.innerHeight || duck.y < 0) {
+    if(duck.y > (window.innerHeight-200) || duck.y < 0) {
       duck.speedY *= -1 ;
     }
 
@@ -61,34 +61,19 @@
     duckElem.style.top = `${duck.y}px`;  //ทำให้รู้ว่า เอา px ไป + กับ  px 
 
     const direction = duck.speedX < 0 ? "left" : "right" ;
-    duckElem.style.backgroundImage.indexOf("1")
 
-    duckElem.style.backgroundImage = `url('./${direction}-1.png')`;
+    console.log(duckElem.style.backgroundImage);
+    console.log(duckElem.style.backgroundImage.indexOf("1"));
+    const numImg = duckElem.style.backgroundImage.indexOf("1") > 0 ? "2" : "1" ;
+    console.log(numImg);
+
+
+    duckElem.style.backgroundImage = `url('./${direction}-${numImg}.png')`;
   }
 
-  // function MoveDuck( duck,duckElem) {
-  //   const { left, top } = duckElem.getBoundingClientRect();
-  //   const outOfBoundX = duck.x < 0 || duck.x > window.innerWidth;
-  //   const outOfBoundY = duck.y < 0 || duck.y > window.innerHeight;
-
-  //   if (outOfBoundX) {
-  //     duck.speedX *= -1;
-  //   }
-
-  //   if (outOfBoundY) {
-  //     duck.speedY *= -1;
-  //   }
-
-  //   duck.x = left + duck.speedX;
-  //   duck.y = top - duck.speedY;
-  //   duckElem.style.left = `${duck.x}px`;
-  //   duckElem.style.top = `${duck.y}px`;
-
-  //   duckElem.style.backgroundImage = getDuckBackgroundImage(duck, duckElem);
-  // }
 
   function run() {
-    const ducks  = createDuck(1);   // สร้างเป็ด
+    const ducks  = createDuck(100);   // สร้างเป็ด
 
     const duckElems = ducks.map(setupDuckElems);  // เอาเป็ดมาสร้าง Elem Div เพื่อแสดงผล 
 
