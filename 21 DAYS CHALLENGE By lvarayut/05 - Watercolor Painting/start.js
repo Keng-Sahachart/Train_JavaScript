@@ -15,9 +15,9 @@
 
     context.beginPath();
 
-    // หาความจาง
+
     const distance = getDistance(previusPoint, currentPoint);
-    const opacity = Math.min(0.5, 1 / distance);
+    const opacity = Math.min(0.5, 1 / distance);    // หาความจาง
 
     context.lineCap = 'round';
     context.lineJoin = 'round';
@@ -30,10 +30,10 @@
     // const opacity = Math.min(0.5, 1 / distance);
     // context.strokeStyle = `rgba(222, 10, 109, ${opacity})`;
 
-    context.moveTo(previusPoint.x, previusPoint.y);
-    context.lineTo(currentPoint.x, currentPoint.y);
-    context.stroke();
-    context.closePath();
+    context.moveTo(previusPoint.x, previusPoint.y);  // จุดเริ่มต้น
+    context.lineTo(currentPoint.x, currentPoint.y); // จุดสิ้นสุด
+    context.stroke();  // สั่งให้วาด จุดต่อจุด
+    context.closePath();  // หยุดการวาด
 
     previusPoint = currentPoint;
   }
@@ -48,15 +48,6 @@
   function getDistance(previusPoint, currentPoint) {
     return Math.sqrt(((previusPoint.x - currentPoint.x) ** 2) + ((previusPoint.y - currentPoint.y) ** 2));
   }
-
-  // function getDistance2(previousPoint, currentPoint) {
-  //   // Distance formular: https://www.wikihow.com/Find-the-Distance-Between-Two-Points
-  //   return Math.sqrt(
-  //     (previousPoint.x - currentPoint.x) ** 2 +
-  //       (previousPoint.y - currentPoint.y) ** 2
-  //   );
-  // }
-
 
 
   /******************************************************************************* */
