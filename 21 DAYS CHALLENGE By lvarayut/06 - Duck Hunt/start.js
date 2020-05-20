@@ -82,7 +82,7 @@
    */
   function shootDuck(event) {
     console.log(event);
-    Shot();
+    GunShot();
 /**
  * @type HTMLDivElement
  */
@@ -115,7 +115,7 @@
 
 
   function run() {
-    const ducks = createDuck(50);   // สร้างเป็ด
+    const ducks = createDuck(2);   // สร้างเป็ด
 
     const duckElems = ducks.map(setupDuckElems);  // เอาเป็ดมาสร้าง Elem Div เพื่อแสดงผล 
 
@@ -135,7 +135,7 @@
 
   }
 
-function Shot() {
+function GunShot() {
     var snd = new Audio("Gun+Shot2.mp3")
     snd.play();
   }
@@ -148,11 +148,11 @@ function Shot() {
  *  
  * duckElem.interval = setInterval(() => moveDuck(duck, duckElem), 100);
  * 
- *      const winElem = document.getElementsByClassName(".winning");
-        const winElem = document.querySelector(".winning");
+ *    const winElem = document.getElementsByClassName(".winning");
+ *    const winElem = document.querySelector(".winning");
  *    ได้ผลไม่เหมือนกัน   ใช้ getElementsByClassName  แล้วจะ เซ็ต winElem.style.opacity = 1; ไม่ได้
- *         console.log(winElem_ByClass);   // ไม่ได้ค่าอะไรออกมาเลย มีแต่ []
-        console.log(winElem);   // ได้ elem ออกมาปกติ
+ *    console.log(winElem_ByClass);   // ไม่ได้ค่าอะไรออกมาเลย มีแต่ []
+ *    console.log(winElem);   // ได้ elem ออกมาปกติ
  * 
  * 
  * 

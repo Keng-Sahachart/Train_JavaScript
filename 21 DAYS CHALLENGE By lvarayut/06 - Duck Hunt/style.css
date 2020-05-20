@@ -19,7 +19,10 @@ body {
 .duck {
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: crosshair;
+   cursor: crosshair , ;
+  
+  cursor: url("/enemy-icon-7.png"), auto;
+  /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;  */
 
   position: absolute;
   height: 120px;
