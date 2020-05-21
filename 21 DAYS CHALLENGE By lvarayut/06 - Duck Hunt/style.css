@@ -19,11 +19,15 @@ body {
 .duck {
   background-repeat: no-repeat;
   background-size: contain;
-   cursor: crosshair , ;
+   cursor: crosshair ,auto ;
   
-  cursor: url("/enemy-icon-7.png"), auto;
+   /* cursor limit size 32×32px https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Basic_User_Interface/Using_URL_values_for_the_cursor_property*/
+  /* cursor: url("./enemy-icon-7.png"); */
   /* cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;  */
-
+  /* cursor: url("./sad.png"), auto;  */
+  /* cursor: url("./cur5.cur"),   auto;  */
+  /* cursor: url(http://ani.cursors-4u.net/cursors/cur-13/cur1162.ani), url(http://ani.cursors-4u.net/cursors/cur-13/cur1162.png), auto !important; */
+  
   position: absolute;
   height: 120px;
   width: 120px;

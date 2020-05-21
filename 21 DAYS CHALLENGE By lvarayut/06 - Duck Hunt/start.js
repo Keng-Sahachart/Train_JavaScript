@@ -96,9 +96,11 @@
     setTimeout(() => {
       document.body.removeChild(duckElem);
       const Checkduck = document.querySelector(".duck"); 
+      console.log(Checkduck);
+      
       if(!Checkduck){ 
         const winElem = document.querySelector(".winning");
-        winElem_ByClass.style.opacity = 1;
+        winElem.style.opacity = 1;
 
         const winElem_ByClass = document.getElementsByClassName("winning");  // ไม่ต้อง มี . นำหน้า
         // winElem_ByClass.style['opacity'] = 1 ;
@@ -126,7 +128,7 @@
       /* setInterval จะ return ออกมา เป็น ค่า **interval คล้ายๆกับ เป็น interval timer ของ object นั้นๆ 
       จะติด ตัว obj ไป เพื่อเอาไว้หยุดเวลา ไม่ให้ทำงานต่อได้ 
       สังเกตุว่า ไม่ได้ สร้าง property นี้ตั้งแต่เริ่มแรก แล้วมันจะเกิดขึ้นเอง ใน obj นั้น ตอนเรา assign ค่าเข้าไปนี่แหละ ถ้าไม่ได้ asign เข้าไป มันจะไม่เกิดขึ้น*/
-      duckElem.interval = setInterval(() => moveDuck(duck, duckElem), 100);
+      duckElem.interval = setInterval(() => moveDuck(duck, duckElem), 200);
       
       duckElem.addEventListener("click",shootDuck);
 
