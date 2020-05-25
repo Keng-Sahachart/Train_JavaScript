@@ -18,7 +18,7 @@
      */     
     moonElem.style.transform = `translate(${ window.scrollY * 0.7 }%,${ window.scrollY * -0.7 }%)`;
 
-    wishElem.style.transform = `translateY(${ window.scrollY * -1.2 }%)`;   // ถ้ากำหนด เกิน จะ หลุดขึ้นไปขึ้นไป ด้านบนหน้าจอ
+    wishElem.style.transform = `translateY(${ window.scrollY * -1.8 }%)`;   // ถ้ากำหนด เกิน จะ หลุดขึ้นไปขึ้นไป ด้านบนหน้าจอ
 
   }
 
