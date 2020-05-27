@@ -117,7 +117,7 @@
 
 
   function run() {
-    const ducks = createDuck(2);   // สร้างเป็ด
+    const ducks = createDuck(5);   // สร้างเป็ด
 
     const duckElems = ducks.map(setupDuckElems);  // เอาเป็ดมาสร้าง Elem Div เพื่อแสดงผล 
 
