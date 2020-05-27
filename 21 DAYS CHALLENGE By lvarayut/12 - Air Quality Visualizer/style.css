@@ -1,7 +1,7 @@
 :root {
   --good-aqi-color: #b0e767;
   --medium-aqi-color: #fe9b56;
-  --bad-aqi-color: #fe6a69;
+  --bad-aqi-color: #cf2121;
   --current-aqi-color: var(--good-aqi-color);
 }
 
