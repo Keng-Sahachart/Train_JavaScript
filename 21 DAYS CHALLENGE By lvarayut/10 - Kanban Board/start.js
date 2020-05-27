@@ -1,5 +1,8 @@
 (() => {
   // เริ่มเขียนโค้ด
+  
+  
+  
   let draggingElem;//  ใช้ระบุตัวที่กำลังถูกลาก
 
   function onDragStart(Event) {
@@ -11,7 +14,8 @@
   }
 
   function onDrop() {
-console.log('drop');
+    console.log('drop');
+    this.append(draggingElem);   //append เข้าไปเลย ไม่ต้อง remove ออกจาก parent อันเดิม
 
   }
 
@@ -20,11 +24,10 @@ console.log('drop');
    * @param {event} event 
    */
   function onDragEnter(event) {
-    event.preventDefault();
+    event.preventDefault();  // cancel behavior
   }
   function onDragOver() {
-    event.preventDefault();
-
+    event.preventDefault();  // cancel behavior
   }
 
   function run() {
@@ -45,8 +48,8 @@ console.log('drop');
 
     dropZoneElems.forEach((dropZoneElem) => {
       dropZoneElem.addEventListener('drop', onDrop);
-      dropZoneElem.addEventListener('dragenter', onDragEnter);
-      dropZoneElem.addEventListener('dragover', onDragOver);
+      dropZoneElem.addEventListener('dragenter', onDragEnter);  //preventDefault
+      dropZoneElem.addEventListener('dragover', onDragOver); //preventDefault
     });
 
   }
@@ -65,9 +68,9 @@ console.log('drop');
  *
  *
  * event drop  กับ dragEnter กับ DragOver จะทับซ้อนกันอยู่
- * ถ้าอยากใช้  drop ต้อง event.preventDefault() เพื่อปิด behavber ออกไปก่อน
+ * ถ้าอยากใช้  drop ต้อง event.preventDefault() เพื่อปิด behavior ออกไปก่อน
  *
  * สังเกตุว่า event ใน HTML จะใช้ตัวพิมพ์เล็กหมดเลย ไม่เป็น camel case
  * dropZoneElem.addEventListener('dragover', onDragOver);
- * 
+ *
  */
