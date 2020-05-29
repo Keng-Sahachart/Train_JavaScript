@@ -8,7 +8,7 @@
 
     if (imageIndex <= -1) {   // error protecting
       imageIndex = lastImageIndex;
-    }else if (imageIndex > lastImageIndex) {
+    } else if (imageIndex > lastImageIndex) {
       imageIndex = 0;
     }
 
@@ -17,7 +17,7 @@
      */
     const imgElem = imgElems[imageIndex];
     console.log(imgElems);
-    imgElem.scrollIntoView({ behavior: "smooth"});
+    imgElem.scrollIntoView({ behavior: "smooth" });
 
     currentImg = imageIndex;
   }
@@ -41,20 +41,18 @@
  *  ตอน addEventListener  แล้วใช้ fnc ที่มี arg -> ต้องใส่ arrow ด้วย -> ถ้าไม่ใส่ arrow fnc จะไม่ทำงาน
  *  btnPrevious.addEventListener('click',()=> displayImageByIndex(imgElems, currentImg - 1));
  *
- *  imgElem.scrollIntoView({option}) 
+ *  imgElem.scrollIntoView({option})
       ไม่ใส่ option  => ภาพตัด
       option ใส่ในลักษณะ destructuring
 
  *behavior:   transition animation.
- auto ภาพตัด  -> default
- smooth เลื่อนภาพ ทำให้ดูนุ่มนวลขึ้น
-
+      auto ภาพตัด  -> default
+      smooth เลื่อนภาพ ทำให้ดูนุ่มนวลขึ้น
  block: vertical alignment.    ลองใช้แล้ว ไม่เห็นความต่าง
-
  inline : horizontal alignment.   ลองใช้แล้ว ไม่เห็นความต่าง
-start
-center
-end
-nearest -> default
+      start
+      center
+      end
+      nearest -> default
 
  */
