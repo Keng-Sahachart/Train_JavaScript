@@ -121,6 +121,8 @@
  * ตอนเรียก property เรียกเป็นชื่อตัวแปร ปกติ --current-aqi-color
  * แต่ตอน assign ค่าเข้าไป ต้อง เป็ฯ sysntex ของ css variable ด้วด้วย
  * 
+ * css variable กำหนดไว้ที่ root document.documentElement
+ * 
  * ducstructure 2 ชั้น  ตัวแปร ชั้นที่ 1 (data) จะไม่เกิดขึ้น
  * const { data: { current } } = await response.json();
  * 
