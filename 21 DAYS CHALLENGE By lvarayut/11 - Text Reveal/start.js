@@ -26,7 +26,7 @@
       // console.log(imgElems);
       // console.log(textElems);
 
-      const Postition_scrollYReveal = imgElem.offsetTop + (imgElem.height / 10);
+      const Postition_scrollYReveal = imgElem.offsetTop + (imgElem.height / 10); // ตำแหน่งของ img ที่จะแสดง text
       if(scrollY >= Postition_scrollYReveal){
         textElem.classList.add('reveal');
 
