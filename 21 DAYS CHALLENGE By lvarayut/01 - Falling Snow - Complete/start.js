@@ -20,15 +20,16 @@
   }
 
   function createSnowBalls(canvas,numberOfSnowBalls){
+    // ทั้งสร้าง ตัวแปรหิมะ และ ทำการสุ่ม ค่าพร้อมกัน
     const x = [...Array(numberOfSnowBalls)].map(()=> {  // คำสั่ง ec6 สร้าง array ตามจำนวน เป็น map
       return{
         x : random(0,canvas.width),
         y: random(0,canvas.height),
 
         opacity : random(0.5,1), 
-        radius : random(2,5),
-        speedX : random(-5,5),
-        speedY : random(1,2)
+        radius : random(2,5), // กำหนดขนาด
+        speedX : random(-5,5), // ความเร็ว+ทิศทาง ซ้าย-ขวา
+        speedY : random(1,2)  // ความเร็ว การตกพื้น
       }
     });
     console.log(x);  
@@ -67,9 +68,11 @@
     const {canvas,canvasContext,numberOfSnowBalls} = setup(); // ประกาศตัวแปรเป็น obj และ รับค่าจาก setup
     const snowBalls = createSnowBalls(canvas,numberOfSnowBalls);
     // alert("snowBall Is " + snowBalls.length);
+
+    // timer ใส่ คำสั่งที่จะใช้ เรียกซ้ำๆ
     setInterval(() => {
  
-      canvasContext.clearRect(0,0,canvas.width,canvas.height)  //มีภาพซ้อน ต้อง เคลียร์ รูปเก่า ออกก่อน ที่จะวาดใหม่ 
+      canvasContext.clearRect(0,0,canvas.width,canvas.height);  //มีภาพซ้อน ต้อง เคลียร์ รูปเก่า ออกก่อน ที่จะวาดใหม่ 
       snowBalls.forEach((snowBall) => drawSnowBall(canvasContext,snowBall));
       snowBalls.forEach((snowBall) => moveSnowBall(canvas,snowBall));
       
