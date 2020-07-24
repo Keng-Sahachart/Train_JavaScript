@@ -16,7 +16,7 @@ h1 {
 
 input {
     border: 1px solid #dfe1e5;
-    border-radius: 24px;
+    border-radius: 24px;  /*ขอบโค้ง*/
 
     width: 50%;
     height: 50px;
@@ -28,5 +28,5 @@ input {
 }
 
 input:focus{
-    outline: none;
+    outline: none; /*ปิดการแสดงผล กรอบ เมื่อคลิก*/
 }
